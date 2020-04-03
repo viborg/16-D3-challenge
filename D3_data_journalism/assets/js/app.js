@@ -114,18 +114,18 @@ d3.csv("assets/data/data.csv").then(function(censusData) {
     .attr("cx", d => xLinearScale(d.poverty))
     .attr("cy", d => yLinearScale(d.healthcare));
 
-    // chartGroup.append("g")
-    //   .selectAll('text')
-    //   .data(censusData)   // callback to censusData
-    //   .enter()
-    //   .append("text")
-    //   .attr("x", d => xLinearScale(d.poverty))
-    //   .attr("y", d => yLinearScale(d.healthcare))
-    //   .attr('font-size',12)
-    //   .attr("dx", -radius/2)
-    //   .attr("dy", radius/2)
-    //   .attr("fill", "red")
-    //   .text(d => d.abbr);
+  chartGroup.append("g")
+    .selectAll('text')
+    .data(censusData)   // callback to censusData
+    .enter()
+    .append("text")
+    .attr("x", d => xLinearScale(d.poverty))
+    .attr("y", d => yLinearScale(d.healthcare))
+    .attr('font-size',12)
+    .attr("dx", -radius/2)
+    .attr("dy", radius/2)
+    .attr("fill", "red")
+    .text(d => d.abbr);
 
 }).catch(function(error) {
   console.log(error);
